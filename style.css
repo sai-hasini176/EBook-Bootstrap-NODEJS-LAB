@@ -1,0 +1,270 @@
+/* ==================== Reset & Body ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f5f7fb; /* light gray background for page */
+}
+
+/* ==================== Header ==================== */
+header.top-header {
+    background-color: #2ecc71 !important; /* green */
+    color: white !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.top-header .left {
+    font-size: 16px;
+}
+
+.top-header .right {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+/* ==================== Layout ==================== */
+.container {
+    display: flex;
+    flex: 1;
+    background: #f5f7fb;
+}
+
+/* ==================== Sidebar ==================== */
+aside.sidebar {
+    width: 220px;
+    background-color: #1f3c88 !important; /* deep blue */
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+aside.sidebar a {
+    color: white !important;
+    padding: 15px 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+aside.sidebar a:hover {
+    background-color: #162d66 !important;
+    padding-left: 30px;
+}
+
+aside.sidebar a.active {
+    font-weight: bold;
+}
+
+/* ==================== Main Content ==================== */
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    background: #f5f7fb;
+}
+
+/* ==================== Cards ==================== */
+.card {
+    width: 100%;
+    max-width: 600px; /* card won’t be too large */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    background-color: white !important;
+}
+
+/* ==================== Forms ==================== */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* ==================== Buttons ==================== */
+button, .primary-btn, .danger-btn {
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.primary-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+}
+
+.primary-btn:hover {
+    background-color: #2980b9;
+}
+
+.danger-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 12px 25px;
+}
+
+.danger-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Logout page buttons side by side */
+.card .primary-btn,
+.card .danger-btn {
+    display: inline-block;  /* side by side */
+    margin: 0 10px;         /* horizontal spacing */
+    text-align: center;
+}
+
+/* ==================== Products ==================== */
+.product-grid {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: 280px;
+}
+
+.product-card:hover {
+    transform: translate(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ==================== Tables ==================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.cart-table-wrapper {
+    overflow-x: auto;
+}
+
+/* ==================== Footer ==================== */
+footer {
+    background-color: #111 !important;
+    color: white !important;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ==================== Misc / Forms ==================== */
+.gender-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.login-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #2c7be5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== Floating Bill ==================== */
+.bill-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.bill-overlay:target {
+    display: flex;
+}
+
+.bill-popup {
+    background-color: white !important;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-grid {
+        gap: 20px;
+    }
+
+    /* Logout page buttons remain side by side on mobile */
+    .card .primary-btn,
+    .card .danger-btn {
+        margin: 10px 5px 0 5px;
+    }
+}
